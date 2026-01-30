@@ -69,10 +69,10 @@ void loop() {
 
 
   // Dump UID
-  Serial.print(F("Card UID:"));
+  Serial.print(F("UID:"));
   for (byte i = 0; i < mfrc522.uid.size; i++) {
-    Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
-    Serial.print(mfrc522.uid.uidByte[i], HEX);
+    //Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
+    Serial.print(mfrc522.uid.uidByte[i]/*, HEX*/);
   } 
   Serial.println();
 }
