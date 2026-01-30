@@ -65,5 +65,14 @@ void loop() {
 	}
 
 	// Dump debug info about the card; PICC_HaltA() is automatically called
-	mfrc522.PICC_DumpToSerial(&(mfrc522.uid));
+	//mfrc522.PICC_DumpToSerial(&(mfrc522.uid));
+
+
+  // Dump UID
+  Serial.print(F("Card UID:"));
+  for (byte i = 0; i < mfrc522.uid.size; i++) {
+    Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
+    Serial.print(mfrc522.uid.uidByte[i], HEX);
+  } 
+  Serial.println();
 }
